@@ -1,6 +1,6 @@
 import React from 'react';
 import store from './store';
-import {Router, Route} from 'react-router'
+import {Route, BrowserRouter} from 'react-router-dom'
 import { Provider } from 'react-redux';
 import Navigation from './component/navigation'
 
@@ -11,10 +11,11 @@ export default class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
-          <Router history={null}>
-            <Route exact path="/" component={Right} />
-            <Route exact path="/view2" component={Fleat} />
-          </Router>
+          <BrowserRouter >
+            <Navigation></Navigation>
+            <Route exact path="/" component={Fleat} />
+            <Route exact path="/view2" component={Right} />
+          </BrowserRouter>
       </Provider>
     )
   }
