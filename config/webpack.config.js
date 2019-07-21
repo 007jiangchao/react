@@ -101,6 +101,17 @@ module.exports = function(webpackEnv) {
             // so that it honors browserslist config in package.json
             // which in turn let's users customize the target behavior as per their needs.
             postcssNormalize(),
+            require('autoprefixer')({
+              "overrideBrowserslist": [
+                "Android >= 4.0",
+                "iOS >= 7"
+              ]
+            }),
+            require('postcss-pxtorem')({
+              rootValue: 37.5,
+              propWhiteList: [],
+              minPixelValue:2,
+            })
           ],
           sourceMap: isEnvProduction && shouldUseSourceMap,
         },
