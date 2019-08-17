@@ -1,9 +1,12 @@
-/* 用于测试this.props.children */
 import React, { Component, Fragment } from 'react';
 import Children from "./children"
+/* 用于测试this.props.children */
 export default class Test extends Component {
-    constructor(props) {
+    constructor( props ) {
         super(props)
+        this.state = {
+            a:0
+        }
     }
 
     render() {
